@@ -3,8 +3,10 @@
 
 class BinarySearch:
     def search(self, arr, target):
-        # return self._search_recursive(arr, target, 0, len(arr) - 1)
-        return self._search_iterative(arr, target)
+        if len(arr) <= 0:
+            return -1
+        return self._search_recursive(arr, target, 0, len(arr) - 1)
+        # return self._search_iterative(arr, target)
 
     def _search_recursive(self, arr, target, left, right):
         mid = (left + right) // 2
@@ -40,3 +42,6 @@ print(binary.search([1, 3, 5, 7, 11, 12, 13, 16], 5))
 print(binary.search([1, 3, 5, 7, 11, 12, 13, 16], 1))
 print(binary.search([1, 3, 5, 7, 11, 12, 13, 16], 16))
 print(binary.search([1, 3, 5, 7, 11, 12, 13, 16], -1))
+print(binary.search([1, 3], 3))
+print(binary.search([1], 1))
+print(binary.search([], 1))

@@ -3,6 +3,8 @@
 
 class TernarySearch:
     def search(self, arr, target):
+        if len(arr) <= 0:
+            return -1
         return self._search(arr, target, 0, len(arr) - 1)
 
     def _search(self, arr, target, left, right):
@@ -31,3 +33,6 @@ print(ternary.search([1, 3, 5, 7, 11, 12, 13, 16], 5))
 print(ternary.search([1, 3, 5, 7, 11, 12, 13, 16], 1))
 print(ternary.search([1, 3, 5, 7, 11, 12, 13, 16], 16))
 print(ternary.search([1, 3, 5, 7, 11, 12, 13, 16], -1))
+print(ternary.search([1, 3], 3))
+print(ternary.search([1], 1))
+print(ternary.search([], 1))
